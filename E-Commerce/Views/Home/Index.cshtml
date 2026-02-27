@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="bg-light mt-4 p-5">
+    <!-- Fila 1: botón + buscador -->
+    <div class="row">
+        <div class="col-sm-12 col-md-3">
+            <div class="d-grid">
+                <button type="button" class="btn btn-outline-secondary"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Categories
+                </button>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-9">
+            <div class="input-group">
+                <input type="text" class="form-control" autocomplete="off" />
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fila 2: productos -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 py-4">
+        @foreach (var n in new int[] { 1, 2, 3, 4, 5 })
+        {
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img class="card-img-top"
+                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3iQAzxf88nvuzn5I1JfVSt31oQmiddHZAKA&s" />
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bolder">fancy product</h5>
+                        $40.00
+                    </div>
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
+                        <a class="btn btn-outline-dark mt-auto" href="#" role="button">View detail</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Categories</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row row-cols-2 g-2">
+                    @foreach (var n in new int[] { 1, 2, 3, 4, 5 })
+                    {
+                        <div class="col d-grid">
+                            <a class="btn btn-outline-dark">Category @n</a>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
